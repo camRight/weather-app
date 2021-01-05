@@ -7,6 +7,10 @@ maybe font awesome for the svg/png of the weather icon
 
 
 
+
+Before fetching. Set up search JS then insert city name into fetch for that city?
+
+
 ### several fetches.
 
 https://openweathermap.org/api
