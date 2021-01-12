@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <!-- <link rel="stylesheet" href="./assets/style.css" /> -->
-  <link rel="stylesheet" href="style.css"
+  <link rel="stylesheet" href="./assets/style.css"
 </head>
 
 <body>
@@ -28,30 +28,25 @@
       <div class="row">
         <input id="city-search" class="form-control col-sm-10" type="text" placeholder="i.e. San Francisco"
           aria-label="Search">
-        <button type="button" id="city-click-btn" class="btn btn-success col-sm-2"><i class="fa fa-search"></i></button>
+        <button type="button" id="city-click-btn" class="btn btn-success col-sm-1"><i class="fa fa-search"></i></button>
       </div>
       <!-- History City Search -->
       <ul class="list-group">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
+        <li class="list-group-item list-color">Cras justo odio</li>
+        <li class="list-group-item bg-light">Dapibus ac facilisis in</li>
+        <li class="list-group-item list-color">Morbi leo risus</li>
+        <li class="list-group-item bg-light">Porta ac consectetur ac</li>
+        <li class="list-group-item list-color">Vestibulum at eros</li>
+        <li class="list-group-item bg-light">Morbi leo risus</li>
+        <li class="list-group-item list-color">Porta ac consectetur ac</li>
+        <li class="list-group-item bg-light">Vestibulum at eros</li>
       </ul>
     </div>
 
     <div class="col-sm-9 float-right">
       <div class="row">
-        <div class="col-sm-12">
-          <div class="jumbotron">
-            <h3 id="city-title">Atlanta (1/12/2021)</h3>
-            <p id="el-temp">Temperature: 90.9 °F</p>
-            <p id="el-humidity">Humidity: 40 %</p>
-            <p id="el-wind">Wind Speed: 12.1 mph</p>
-            <p id="uv-index">UV Index: 12.1 mph</p>
+        <div class="col-sm-12" >
+          <div class="jumbotron in-content-title" id="dashboard"> 
           </div>
         </div>
       </div>
@@ -59,19 +54,11 @@
     </div>
 
     <div class="col-sm-9 float-right">
-      <div class="jumbotron">
+      <div class="jumbotron in-content-title">
         <h3>5-Day Forecast:</h3>
-        <div class="card-deck">
-          <div class="card">
-            <img class="card-img-top" src="" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                content.
-                This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
+        <div class="card-deck" id="five-day">
+        
+<!--           
           <div class="card">
             <img class="card-img-top" src="" alt="Card image cap">
             <div class="card-body">
@@ -109,7 +96,9 @@
                 This card has even longer content than the first to show that equal height action.</p>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
-          </div>
+          </div> -->
+
+
         </div>
         </div>
       </div>
@@ -125,7 +114,10 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
 
 </body>
 
