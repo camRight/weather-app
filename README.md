@@ -28,3 +28,10 @@ https://openweathermap.org/api
 -for city search then to UL list DOM traversal
 -5 day forecast
 -1 day (12hr/24hr?) forecast
+
+
+## Links:
+
+Repo:
+
+Pages: https://camright.github.io/weather-app/.
