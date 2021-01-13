@@ -3,8 +3,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   function searchCity() {
-    let input = document.getElementById('city-search').value;
-    input = input.toLowerCase();
+    const input = document.getElementById('city-search').value;
+
+    
+    
+    // function addEntry() {
+    //   let existingEntries = JSON.parse(localStorage.getItem("allEntries"));
+    //   if(existingEntries == null) existingEntries = [];
+    //   let entry = {
+
+    //     "Name": = myCity
+    //   };
+    //   localStorage.setItem("entry", JSON.stringify(entry));
+
+    //   existingEntries.push(entry);
+    //   localStorage.setItem("allEntries", JSON.stringify(existingEntries));
+    // };
+
+
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&units=imperial&appid=e6c064d18459b94b71b91664234d49f9`)
       .then(response => response.json())
       .then(data => {
@@ -42,12 +58,13 @@ document.addEventListener("DOMContentLoaded", function () {
             let iconcode = fiveDay.list[i].weather[0].icon
             let iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
-            let currentDay = moment(fiveDay.date).format("dddd")
+            let nextDay = moment(fiveDay.list[i].dt, "X").format("dddd")
+
             document.getElementById("five-day").innerHTML = document.getElementById("five-day").innerHTML+ `
               <div class="card">
             <img class="card-img-top" src="${iconurl}" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">${currentDay}</h5>
+              <h5 class="card-title">${nextDay}</h5>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
                 content.
                 This content is a little bit longer.</p>
