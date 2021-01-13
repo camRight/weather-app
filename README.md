@@ -9,9 +9,13 @@ Server-Side API's: OpenWeatherMap.org/API
 ## Javascript:
 
 -DOM Manipulation
+
 -Object Literals
+
 -TODO: Local Storage
+
 -TODO: Ternary Operators
+
     #### Use operators to manipulate object literals: if UV index above 60% then blue. Below? Green
 
 
