@@ -61,13 +61,16 @@ document.addEventListener("DOMContentLoaded", function () {
             let nextDay = moment(fiveDay.list[i].dt, "X").format("dddd")
             let fiveHum = fiveDay.list[i].main.humidity
 
+            // Ternary Expression for object literal
+            const humColorCheck = (fiveHum >= 60) ? 'bg-primary text-white' : 'bg-success text-white';
+
             document.getElementById("five-day").innerHTML = document.getElementById("five-day").innerHTML+ `
               <div class="card">
             <img class="card-img-top" src="${iconurl}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">${nextDay}</h5>
               <p class="card-text">Temp: ${fiveTemp}</p>
-              <p class="card-text">Humidity: ${fiveHum}%</p>
+              <p class="card-text">Humidity: <span class="${humColorCheck}">${fiveHum}% </span></p>
             </div>
           </div>
             `
