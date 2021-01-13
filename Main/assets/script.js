@@ -57,24 +57,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let iconcode = fiveDay.list[i].weather[0].icon
             let iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
-
+            let fiveTemp = fiveDay.list[i].main.temp
             let nextDay = moment(fiveDay.list[i].dt, "X").format("dddd")
+            let fiveHum = fiveDay.list[i].main.humidity
 
             document.getElementById("five-day").innerHTML = document.getElementById("five-day").innerHTML+ `
               <div class="card">
             <img class="card-img-top" src="${iconurl}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">${nextDay}</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                content.
-                This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <p class="card-text">Temp: ${fiveTemp}</p>
+              <p class="card-text">Humidity: ${fiveHum}%</p>
             </div>
           </div>
             `
+            
           }
           
         }
+        
       });
   }
   document.getElementById("city-click-btn").addEventListener("click", searchCity);
