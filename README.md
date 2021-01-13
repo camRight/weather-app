@@ -1,11 +1,18 @@
 # weather-app
 
+## Technologies:
 
-Code Breakdown:
+Moment.js
+Bootstrap
+Server-Side API's: OpenWeatherMap.org/API
 
-maybe font awesome for the svg/png of the weather icon
+## Javascript:
 
-
+DOM Manipulation
+Object Literals
+TODO: Local Storage
+TODO: Ternary Operators
+    #### Use operators to manipulate object literals: if UV index above 60% then blue. Below? Green
 
 
 Before fetching. Set up search JS then insert city name into fetch for that city?
