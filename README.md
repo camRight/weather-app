@@ -3,7 +3,9 @@
 ## Technologies:
 
 Moment.js
+
 Bootstrap
+
 Server-Side API's: OpenWeatherMap.org/API
 
 ## Javascript:
