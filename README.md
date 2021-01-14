@@ -49,4 +49,4 @@ The mockup includes a search option, a list of cities searched, and a five-day f
 
 Repo: https://github.com/camRight/weather-app
 
-Pages: https://camright.github.io/weather-app/.
+Pages: https://camright.github.io/weather-app/
