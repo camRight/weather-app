@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //   if (existingEntries == null) existingEntries = [];
   //   let entry = {
 
-  //     "Name": = input
+  //     // "Name": = input
   //   };
   //   localStorage.setItem("entry", JSON.stringify(entry));
 
@@ -17,8 +17,24 @@ document.addEventListener("DOMContentLoaded", function () {
   // console.log(existingEntries)
   // console.log(entry)
 
+  // Instead of local storage use a createElement li. 
+  // then check index number [0] or [1]... => to variate list bg color for nice styling.
+  // append input into list
+  // use a loop and/or ternary expression in array.
+
+  const searchCityCalls = 0;
+
   function searchCity() {
+    // TODO: Splice input string then Capitalize first of each letter
     const input = document.getElementById('city-search').value;
+    const searchCityCalls = 0;
+
+    document.getElementById("search_history").insertAdjacentHTML('afterbegin',
+    `
+      <li class="list-group-item list-color">${input}</li>
+    `)
+
+
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&units=imperial&appid=e6c064d18459b94b71b91664234d49f9`)
       .then(response => response.json())
@@ -79,8 +95,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
       });
+      searchCityCalls++;
   }
   document.getElementById("city-click-btn").addEventListener("click", searchCity);
 
+  
+}
 
+  // all code before this
 });
