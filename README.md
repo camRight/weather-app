@@ -25,7 +25,7 @@ Server-Side API's: OpenWeatherMap.org/API
 
 -Ternary Operators
 
-    #### Used operators to manipulate object literals: if UV index above 60% then blue. Below? Green
+    #### Used expressions to manipulate object literals: if UV index above 60% then blue. Below? Green
 
 
 ### several fetches.
