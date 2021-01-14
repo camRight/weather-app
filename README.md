@@ -1,5 +1,9 @@
 # weather-app
 
+![Screenshot of Project](Main/assets/images/weather-appScreenshot.png?raw=true "Weather App")
+
+
+
 ## Technologies:
 
 Moment.js
@@ -20,8 +24,6 @@ Server-Side API's: OpenWeatherMap.org/API
 
     #### Use operators to manipulate object literals: if UV index above 60% then blue. Below? Green
 
-
-Before fetching. Set up search JS then insert city name into fetch for that city?
 
 
 ### several fetches.
