@@ -34,6 +34,6 @@ https://openweathermap.org/api
 
 ## Links:
 
-Repo:
+Repo: https://github.com/camRight/weather-app
 
 Pages: https://camright.github.io/weather-app/.
