@@ -1,25 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
   // code...
 
+  // function addEntry() {
+  //   let existingEntries = JSON.parse(localStorage.getItem("allEntries"));
+  //   if (existingEntries == null) existingEntries = [];
+  //   let entry = {
+
+  //     "Name": = input
+  //   };
+  //   localStorage.setItem("entry", JSON.stringify(entry));
+
+  //   existingEntries.push(entry);
+  //   localStorage.setItem("allEntries", JSON.stringify(existingEntries));
+  // };
+
+  // console.log(existingEntries)
+  // console.log(entry)
 
   function searchCity() {
     const input = document.getElementById('city-search').value;
-
-    
-    
-    // function addEntry() {
-    //   let existingEntries = JSON.parse(localStorage.getItem("allEntries"));
-    //   if(existingEntries == null) existingEntries = [];
-    //   let entry = {
-
-    //     "Name": = myCity
-    //   };
-    //   localStorage.setItem("entry", JSON.stringify(entry));
-
-    //   existingEntries.push(entry);
-    //   localStorage.setItem("allEntries", JSON.stringify(existingEntries));
-    // };
-
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&units=imperial&appid=e6c064d18459b94b71b91664234d49f9`)
       .then(response => response.json())
@@ -40,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <p id="el-wind">Wind Speed: ${data.wind.speed} mph</p>
             <p id="uv-index">UV Index: ${uvdata.value}</p>`
 
-          
+
             console.log(uvdata)
           })
       });
@@ -64,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Ternary Expression for object literal
             const humColorCheck = (fiveHum >= 60) ? 'bg-primary text-white' : 'bg-success text-white';
 
-            document.getElementById("five-day").innerHTML = document.getElementById("five-day").innerHTML+ `
+            document.getElementById("five-day").innerHTML = document.getElementById("five-day").innerHTML + `
               <div class="card">
             <img class="card-img-top" src="${iconurl}" alt="Card image cap">
             <div class="card-body">
@@ -74,11 +73,11 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
           </div>
             `
-            
+
           }
-          
+
         }
-        
+
       });
   }
   document.getElementById("city-click-btn").addEventListener("click", searchCity);
