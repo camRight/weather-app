@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("search_history").insertAdjacentHTML('afterbegin',
       `
       <li class="list-group-item ${listVariation}">${input}</li>
-    `)
+    `
+    )
 
 
 
@@ -23,8 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
           .then(response => response.json())
           .then(uvdata => {
 
-            let currentDate = moment(data.dt, "X").format("(MM/DD/YYYY)")
-            let iconcode = data.weather[0].icon
+
+            let uvIndex = uvdata.value;
+            let currentDate = moment(data.dt, "X").format("(MM/DD/YYYY)");
+            let iconcode = data.weather[0].icon;
             let iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
             document.getElementById("dashboard").innerHTML = ` 
       
@@ -32,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <p id="el-temp">Temperature: ${data.main.temp} °F</p>
             <p id="el-humidity">Humidity: ${data.main.humidity} %</p>
             <p id="el-wind">Wind Speed: ${data.wind.speed} mph</p>
-            <p id="uv-index">UV Index: ${uvdata.value}</p>`
+            <p id="uv-index">UV Index: <span class="bg-danger text-white">${uvIndex}</span></p>`
 
 
             console.log(uvdata)
@@ -46,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(fiveDay)
 
         let fiveNode = document.getElementById("five-day");
-
+        // destroy the child
         while (fiveNode.firstChild) {
           fiveNode.removeChild(fiveNode.lastChild);
         }
@@ -54,40 +57,29 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < fiveDay.list.length; i++) {
           if (fiveDay.list[i].dt_txt.includes("15:00:00")) {
 
-            let iconcode = fiveDay.list[i].weather[0].icon
+            let iconcode = fiveDay.list[i].weather[0].icon;
             let iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
-            let fiveTemp = fiveDay.list[i].main.temp
-            let nextDay = moment(fiveDay.list[i].dt, "X").format("dddd")
-            let fiveHum = fiveDay.list[i].main.humidity
+            let fiveTemp = fiveDay.list[i].main.temp;
+            let nextDay = moment(fiveDay.list[i].dt, "X").format("dddd");
+            let fiveHum = fiveDay.list[i].main.humidity;
 
-            // Ternary Expression for object literal
-            const humColorCheck = (fiveHum >= 60) ? 'bg-primary text-white' : 'bg-success text-white';
-
-
-            // removeChild to remove nodes under parent node
-
-
-
+            // Ternary Expression for object literal color
+            const humColorCheck = (fiveHum >= 60) ? 'bg-success' : 'bg-danger';
 
             // repeated because DOM needs element creation
             document.getElementById("five-day").innerHTML = document.getElementById("five-day").innerHTML + `
-            <div class="card">
-            <img class="card-img-top" src="${iconurl}" alt="Card image cap">
+            <div class="card bg-primary text-white">
             <div class="card-body">
-              <h5 class="card-title">${nextDay}</h5>
+            <h4 class="card-title weighted-title">${nextDay}</h4>
+            <img class="card-img-top" src="${iconurl}" alt="Card image cap">
+
               <p class="card-text">Temp: ${fiveTemp}°F</p>
               <p class="card-text">Humidity: <span class="${humColorCheck}">${fiveHum}% </span></p>
               </div>
           </div>
             `
-            // document.getElementById("five-day").innerHTML = fiveNode
-
-            // if (searchCityCalls >= 1) {
-            // }
           }
-
         }
-
       });
     searchCityCalls++;
   }
