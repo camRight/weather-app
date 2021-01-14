@@ -21,17 +21,16 @@ document.addEventListener("DOMContentLoaded", function () {
   // then check index number [0] or [1]... => to variate list bg color for nice styling.
   // append input into list
   // use a loop and/or ternary expression in array.
-
-  const searchCityCalls = 0;
+  let searchCityCalls = 0;
 
   function searchCity() {
     // TODO: Splice input string then Capitalize first of each letter
     const input = document.getElementById('city-search').value;
-    const searchCityCalls = 0;
 
+    let listVariation = searchCityCalls % 2 == 0 ? "list-color" : "bg-light"
     document.getElementById("search_history").insertAdjacentHTML('afterbegin',
     `
-      <li class="list-group-item list-color">${input}</li>
+      <li class="list-group-item ${listVariation}">${input}</li>
     `)
 
 
@@ -95,12 +94,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
       });
-      searchCityCalls++;
+    searchCityCalls++;
   }
   document.getElementById("city-click-btn").addEventListener("click", searchCity);
 
   
-}
-
   // all code before this
 });
