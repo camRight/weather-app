@@ -38,6 +38,7 @@ I based this project on a mockup--simulating when a client needs a web page desi
 as close as possible to the intended goal, but also saw room for improvement in the way the information was layed out. Subsequently, ternary
 expressions were used to evaluate the data and provide a color-based UI experience based on the information the API provided.
 
+![Mockup to fulfill Clients Needs](Main\assets\images\mockup.png?raw=true "Mockup")
 
 ## Links:
 
