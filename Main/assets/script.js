@@ -1,26 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // code...
 
-  // function addEntry() {
-  //   let existingEntries = JSON.parse(localStorage.getItem("allEntries"));
-  //   if (existingEntries == null) existingEntries = [];
-  //   let entry = {
-
-  //     // "Name": = input
-  //   };
-  //   localStorage.setItem("entry", JSON.stringify(entry));
-
-  //   existingEntries.push(entry);
-  //   localStorage.setItem("allEntries", JSON.stringify(existingEntries));
-  // };
-
-  // console.log(existingEntries)
-  // console.log(entry)
-
-  // Instead of local storage use a createElement li. 
-  // then check index number [0] or [1]... => to variate list bg color for nice styling.
-  // append input into list
-  // use a loop and/or ternary expression in array.
   let searchCityCalls = 0;
 
   function searchCity() {
@@ -29,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let listVariation = searchCityCalls % 2 == 0 ? "list-color" : "bg-light"
     document.getElementById("search_history").insertAdjacentHTML('afterbegin',
-    `
+      `
       <li class="list-group-item ${listVariation}">${input}</li>
     `)
 
@@ -65,6 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(fiveDay => {
         console.log(fiveDay)
 
+        let fiveNode = document.getElementById("five-day");
+
+        while (fiveNode.firstChild) {
+          fiveNode.removeChild(fiveNode.lastChild);
+        }
 
         for (let i = 0; i < fiveDay.list.length; i++) {
           if (fiveDay.list[i].dt_txt.includes("15:00:00")) {
@@ -78,17 +63,27 @@ document.addEventListener("DOMContentLoaded", function () {
             // Ternary Expression for object literal
             const humColorCheck = (fiveHum >= 60) ? 'bg-primary text-white' : 'bg-success text-white';
 
+
+            // removeChild to remove nodes under parent node
+
+
+
+
+            // repeated because DOM needs element creation
             document.getElementById("five-day").innerHTML = document.getElementById("five-day").innerHTML + `
-              <div class="card">
+            <div class="card">
             <img class="card-img-top" src="${iconurl}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">${nextDay}</h5>
-              <p class="card-text">Temp: ${fiveTemp}</p>
+              <p class="card-text">Temp: ${fiveTemp}°F</p>
               <p class="card-text">Humidity: <span class="${humColorCheck}">${fiveHum}% </span></p>
-            </div>
+              </div>
           </div>
             `
+            // document.getElementById("five-day").innerHTML = fiveNode
 
+            // if (searchCityCalls >= 1) {
+            // }
           }
 
         }
@@ -97,7 +92,5 @@ document.addEventListener("DOMContentLoaded", function () {
     searchCityCalls++;
   }
   document.getElementById("city-click-btn").addEventListener("click", searchCity);
-
-  
   // all code before this
 });
