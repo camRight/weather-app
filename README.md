@@ -25,7 +25,9 @@ Server-Side API's: OpenWeatherMap.org/API
 
 -Ternary Operators
 
-    #### Used operators to manipulate object literals: if UV index above 60% then blue. Below? Green
+-TODO: Make search bar less wide and greater in height. Center search SVG/Icon after input field.
+
+    #### Used expressions to manipulate object literals: if UV index above 60% then blue. Below? Green
 
 
 ### several fetches.
