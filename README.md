@@ -3,7 +3,7 @@
 This provided screenshot is an example of what the working application looks like in use. Notice: UI design is really important to me,
 and I wanted to create something more intuitive or informative than the provided mockup.
 
-![Screenshot of Project](Main/assets/images/weather-appScreenshot.png?raw=true "Weather App")
+![Screenshot of Project](/assets/images/weather-appScreenshot.png?raw=true "Weather App")
 
 
 
@@ -54,7 +54,7 @@ expressions were used to evaluate the data and provide a color-based UI experien
 
 The mockup includes a search option, a list of cities searched, and a five-day forecast and current weather conditions.
 
-![Mockup to fulfill Clients Needs](Main/assets/images/mockup.png?raw=true "Mockup")
+![Mockup to fulfill Clients Needs](/assets/images/mockup.png?raw=true "Mockup")
 
 ## Links:
 
