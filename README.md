@@ -1,7 +1,6 @@
 # weather-app
 
-This provided screenshot is an example of what the working application looks like in use. Notice: UI design is really important to me,
-and I wanted to create something more intuitive or informative than the provided mockup.
+This provided screenshot is an example of what the working application looks like in use. Notice: I wanted to create something more intuitive or informative than the provided mockup's UI.
 
 ![Screenshot of Project](/assets/images/weather-appScreenshot.png?raw=true "Weather App")
 
