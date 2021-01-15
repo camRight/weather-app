@@ -25,12 +25,16 @@ Server-Side API's: OpenWeatherMap.org/API
 
 -Ternary Operators
 
+-Chained Promise Objects
+
 -JQuery was required for BOOTSTRAP, but all other Javascript is Vanilla.
 
 -TODO: Make search bar less wide and greater in height. Center search SVG/Icon after input field.
 
     ### AJAX vs Fetch: 
-        -Fetch was used to access API with default 'GET' method. Little consideration for IE support, albeit a polyfill can be used to support legacy browsers.
+        -Fetch was used to access API with default 'GET' method. 
+        -Little consideration for IE support, albeit a polyfill can be used to support legacy browsers.
+        -
 
     #### Used expressions to manipulate object literals: if UV index above 60% then blue. Below? Green
 
