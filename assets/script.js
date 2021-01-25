@@ -1,11 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
   // code...
-
+  let existingEntries = JSON.parse(localStorage.getItem("allEntries")) || [];
+ 
   let searchCityCalls = 0;
 
   function searchCity() {
+    // function addEntry() {
+
+    //   let entry = {
+
+
+
     // TODO: Splice input string then Capitalize first of each letter
     const input = document.getElementById('city-search').value;
+
+    existingEntries.push(input)
+
+    localStorage.setItem("entry", JSON.stringify(existingEntries));
 
     let listVariation = searchCityCalls % 2 == 0 ? "list-color" : "bg-light"
     document.getElementById("search_history").insertAdjacentHTML('afterbegin',
